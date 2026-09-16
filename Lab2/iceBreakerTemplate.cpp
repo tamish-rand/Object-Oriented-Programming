@@ -4,6 +4,10 @@
  * TO DO: 
  * Add <vector>, <cstdlib>, and <ctime>​
  */
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+#include <string>
 
 using namespace std;
 
