@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <string>
+#include <random>
 
 using namespace std;
 
@@ -26,7 +27,7 @@ void promptFile(vector<string> &);
 void printVec(vector<string>);
 int ranGen(int size);
 bool readFile (string filename, vector<string> & vec);
-bool writeFile(string filename, vector<string> v0, vector<string> v1);
+bool writeFile(string filename, const vector<string> & v0, const vector<string> & v1);
 
 /**
  * @brief randomly returns a number from 0 to 5.
@@ -41,9 +42,14 @@ bool writeFile(string filename, vector<string> v0, vector<string> v1);
  * 
  * @return int: index of question
  */
-int ranGen(int size){
-    int randomNumber = rand() % size;  // 0 through 5
-    return randomNumber;
+int ranGen(int size)
+{
+    static random_device rd;
+    static mt19937 generator(rd());
+
+    uniform_int_distribution<int> distribution(0, size - 1);
+
+    return distribution(generator);
 }
 
 /**
@@ -95,26 +101,26 @@ bool readFile(string filename, vector<string> & vec) {
  * -  pass by value (e.g. vector<string> v0),
  * -  pass by const reference (e.g. const vector<string> & v0),
  */
-bool writeFile(string filename, vector<string> v0, vector<string> v1){
+bool writeFile(string filename, const vector<string> & v0, const vector<string> &v1){
 
     ofstream outputFile(filename);
      if (!outputFile) {
         cout << "Error: Could not create data.csv" << endl;
+        return false;
     }
 
     // write under the structure:
     // Student_Name, Question_#
     for(int i = 0; i < v0.size(); i++){
-        outputFile << v0[i] << "," << v1[ranGen()] << endl;
+        outputFile << v0[i] << "," << v1[ranGen(v1.size())] << endl;
     }
     outputFile.close();
-
+return true;
 }
 
 
 int main()
 {
-    srand(time(nullptr));
     vector<string> roster;
     vector<string> qBank;
     readFile("2310_F26_Rosters.csv", roster);
