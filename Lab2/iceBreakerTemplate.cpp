@@ -12,7 +12,7 @@
 using namespace std;
 
 /**
- * TO DO: 
+ * TO DO:  
  * Create function prototypes for all the functions.
  * Write their function declarations below mai()).
  * 
@@ -24,6 +24,9 @@ using namespace std;
 //------------------------PROTOTYPE-------------------------------------------
 void promptFile(vector<string> &); 
 void printVec(vector<string>);
+int ranGen(int size);
+bool readFile (string filename, vector<string> & vec);
+bool writeFile(string filename, vector<string> v0, vector<string> v1);
 
 /**
  * @brief randomly returns a number from 0 to 5.
@@ -38,8 +41,8 @@ void printVec(vector<string>);
  * 
  * @return int: index of question
  */
-int ranGen(){
-    int randomNumber = rand() % 6;  // 0 through 5
+int ranGen(int size){
+    int randomNumber = rand() % size;  // 0 through 5
     return randomNumber;
 }
 
@@ -53,14 +56,14 @@ int ranGen(){
  * ​​​Return a bool instead in order to indicate whether the operation
  * succeeded or not
  */
-void readFile(string filename, vector<string> & vec) {
+bool readFile(string filename, vector<string> & vec) {
 
    ifstream inputFile(filename);
 
     //error handling
     if (!inputFile.is_open()) {
         cerr << "Error: Could not open file\n";
-        return;
+        return false;
     }
 
     string line;
@@ -70,7 +73,7 @@ void readFile(string filename, vector<string> & vec) {
     }
 
     inputFile.close();
-    return;
+    return true;
 }
 /**
  * @brief writes to filename with the first column from v0, second column from v1
@@ -92,7 +95,7 @@ void readFile(string filename, vector<string> & vec) {
  * -  pass by value (e.g. vector<string> v0),
  * -  pass by const reference (e.g. const vector<string> & v0),
  */
-void writeFile(string filename, vector<string> v0, vector<string> v1){
+bool writeFile(string filename, vector<string> v0, vector<string> v1){
 
     ofstream outputFile(filename);
      if (!outputFile) {
