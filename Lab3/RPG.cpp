@@ -1,4 +1,4 @@
-#include <iostream>
+
 #include "RPG.h"
 using namespace std;
 
@@ -29,14 +29,6 @@ int RPG::getHitsTaken(){
 
 float RPG::getLuck(){
     return luck;
-}
-
-float RPG::getExp(){
-    return exp;
-}
-
-float RPG::getLuck(){
-    return level;
 }
 
 float RPG::getExp(){
