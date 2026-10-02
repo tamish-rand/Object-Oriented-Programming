@@ -25,6 +25,10 @@ class RPG{
 
 private:
     string name;
+    int hits_taken;
+    float luck;
+    float exp;
+    int level;
     //COMPLETE THE REST
 
 
