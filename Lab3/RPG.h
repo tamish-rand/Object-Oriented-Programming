@@ -20,10 +20,15 @@ class RPG{
 
     //accessors 
     string getName() const;
+    int getHitsTaken();
+    float getLuck();
+    float getExp();
+    int getLevel();
     //COMPLETE THE REST 
 
 
-private:
+    private:
+
     string name;
     int hits_taken;
     float luck;
