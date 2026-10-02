@@ -46,3 +46,11 @@ int RPG::getLevel(){
     return level;
 }
 
+void RPG::setHitsTaken(int new_hits){
+    hits_taken = new_hits;
+}
+
+bool RPG::isAlive(){
+    return hits_taken < MAX_HITS_TAKEN;
+}
+
