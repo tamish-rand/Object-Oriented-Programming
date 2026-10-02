@@ -22,3 +22,27 @@ string RPG::getName(){
     return name;
 }
 
+int RPG::getHitsTaken(){
+    return hits_taken;
+}
+
+float RPG::getLuck(){
+    return luck;
+}
+
+float RPG::getExp(){
+    return exp;
+}
+
+float RPG::getLuck(){
+    return level;
+}
+
+float RPG::getExp(){
+    return exp;
+}
+
+int RPG::getLevel(){
+    return level;
+}
+
