@@ -6,22 +6,22 @@ int main(){
     RPG p1 ("Wiz",0,0.2,60,1);
     RPG p2 = RPG();
 
-    printf("s% Current Stats\n", p1.getName().c_str());
+    printf("s% Current Stats .\n", p1.getName().c_str());
     printf("Hits Taken: %i\t Luck: %f\t Exp %f\t Level: %f\t Level: %i\n", p1.getHitsTaken(), p1.getLuck(), p1.getExp(), p1.getLevel());
 
     //Print the same for p2
-    printf("s% Current Stats\n", p2.getName().c_str());
+    printf("s% Current Stats \n", p2.getName().c_str());
     printf("Hits Taken: %i\t Luck: %f\t Exp %f\t Level: %f\t Level: %i\n", p2.getHitsTaken(), p2.getLuck(), p2.getExp(), p2.getLevel());
     //Call setHitsTaken(new_hit) on either p1 or p2
     p1.setHitsTaken(3);
 
-    cout << "\nP2 hits taken";
+    cout << "\nP1 hits taken: " << p1.getHitsTaken() << endl;
     // PRINT out the hits_taken
 
-    cout << "0 is dead, 1 is alive\n";
+    cout << "0 is dead, 1 is alive" << endl;
     // Call isAlive() on both p1 and p2
-    cout << "P1 status: " << p1.isAlive();
-    cout << "P2 status: " << p2.isAlive();
+    cout << "P1 status: " << p1.isAlive() << endl;
+    cout << "P2 status: " << p2.isAlive() << endl;
 
     return 0;
 
