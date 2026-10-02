@@ -19,7 +19,7 @@ class RPG{
     void setHitsTaken(int new_hits);
 
     //accessors 
-    string getName() const;
+    string getName();
     int getHitsTaken();
     float getLuck();
     float getExp();
