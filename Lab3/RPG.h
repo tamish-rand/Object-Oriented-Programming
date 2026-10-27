@@ -24,8 +24,14 @@ class RPG{
     float getLuck();
     float getExp();
     int getLevel();
-    //COMPLETE THE REST 
+    
+    //part 2 functions
+    void setName(string name);
+    void updateExpLevel();
+    void attack(RPG* opponent);
+    void printStats();
 
+    ~RPG();
 
     private:
 
