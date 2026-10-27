@@ -71,6 +71,9 @@ void RPG::attack (RPG* opponent){
 }
 
 void RPG::printStats(){
+    cout << "\nName: " << name << "\nHits Taken: " << hits_taken
+        <<"\nLuck: " << luck << "\nExp: " << exp 
+        <<"\nLevel: " << level << "\nStatus: ";
 
 }
 
