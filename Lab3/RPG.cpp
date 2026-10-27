@@ -47,3 +47,30 @@ bool RPG::isAlive()const{
     return hits_taken < MAX_HITS_TAKEN;
 }
 
+//part 2 additions
+void RPG::setName(string name){
+    this->name = name;
+}
+
+void RPG::updateExpLevel(){
+    exp += 50.0;
+
+    if (exp >= 100.0){
+        level += 1;
+        exp = 0.0;
+        luck += 0.1;
+    }
+}
+
+void RPG::attack (RPG* opponent){
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_real_distribution<double> dis(0.0,1.0);
+
+    float random_num = dis(gen);
+}
+
+void RPG::printStats(){
+
+}
+
