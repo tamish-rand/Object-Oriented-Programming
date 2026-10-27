@@ -19,23 +19,23 @@ RPG::RPG(string name, int hits_taken, float luck, float exp, int level){
     this->level = level;
 }
 
-string RPG::getName(){
+string RPG::getName()const{
     return name;
 }
 
-int RPG::getHitsTaken(){
+int RPG::getHitsTaken()const{
     return hits_taken;
 }
 
-float RPG::getLuck(){
+float RPG::getLuck()const{
     return luck;
 }
 
-float RPG::getExp(){
+float RPG::getExp()const{
     return exp;
 }
 
-int RPG::getLevel(){
+int RPG::getLevel()const{
     return level;
 }
 
@@ -43,7 +43,7 @@ void RPG::setHitsTaken(int new_hits){
     hits_taken = new_hits;
 }
 
-bool RPG::isAlive(){
+bool RPG::isAlive()const{
     return hits_taken < MAX_HITS_TAKEN;
 }
 

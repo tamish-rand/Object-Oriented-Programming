@@ -15,15 +15,15 @@ class RPG{
     RPG(string name, int hits_taken, float luck, float exp, int level);
 
     //mutators 
-    bool isAlive();
+    bool isAlive() const;
     void setHitsTaken(int new_hits);
 
     //accessors 
-    string getName();
-    int getHitsTaken();
-    float getLuck();
-    float getExp();
-    int getLevel();
+    string getName()const;
+    int getHitsTaken()const;
+    float getLuck()const;
+    float getExp()const;
+    int getLevel()const;
     
     //part 2 functions
     void setName(string name);
