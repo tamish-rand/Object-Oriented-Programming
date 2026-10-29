@@ -1,5 +1,9 @@
 
 #include "RPG.h"
+#include <iostream>
+#include <random>
+#include <iomanip>
+
 using namespace std;
 
 RPG::RPG()
@@ -68,12 +72,26 @@ void RPG::attack (RPG* opponent){
     uniform_real_distribution<double> dis(0.0,1.0);
 
     float random_num = dis(gen);
+
+    bool hit = false;
+    if (random_num > HIT_FACTOR * opponent -> getLuck()){
+        hit = true;
+
+    }
+
 }
 
 void RPG::printStats(){
     cout << "\nName: " << name << "\nHits Taken: " << hits_taken
         <<"\nLuck: " << luck << "\nExp: " << exp 
         <<"\nLevel: " << level << "\nStatus: ";
+    
+    if (isAlive()){
+        cout << "Alive";
+    }
+    else{
+        cout << "Dead";
+    }
 
 }
 
