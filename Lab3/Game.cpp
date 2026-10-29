@@ -2,9 +2,7 @@
 #include <random>
 using namespace std;
 
-Game::Game()
-{
-
+Game::Game(){
 }
 
 void Game::generatePlayers(int n)
@@ -38,6 +36,12 @@ int Game::selectPlayer(){
 }
 
 void Game::endRound(RPG *winner, RPG *loser, int loserIndex){
+    winner ->setHitsTaken(0);
+    live_players.erase(loserIndex);
+    winner->updateExpLevel();
+
+    cout << winner->getName()<<" won against " << loser->getName();
+
 
 }
 
