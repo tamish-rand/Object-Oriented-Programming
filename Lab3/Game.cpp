@@ -1,8 +1,10 @@
 #include "Game.h"
 #include <random>
+#include <iostream>
 using namespace std;
 
 Game::Game(){
+
 }
 
 void Game::generatePlayers(int n)
@@ -22,7 +24,7 @@ void Game::generatePlayers(int n)
 int Game::selectPlayer(){
     random_device rd;
     mt19937 gen(rd());
-    uniform_int_distribution<> dist(0, live_players.begin());
+    uniform_int_distribution<> dist(0, live_players.size() -1);
 
     //pick random index
     int randomIndex= dist(gen);
@@ -40,7 +42,7 @@ void Game::endRound(RPG *winner, RPG *loser, int loserIndex){
     live_players.erase(loserIndex);
     winner->updateExpLevel();
 
-    cout << winner->getName()<<" won against " << loser->getName();
+    cout << winner->getName()<<" won against " << loser->getName() << endl;
 }
 
 void Game::battleRound(){
