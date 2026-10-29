@@ -85,9 +85,9 @@ void RPG::attack (RPG* opponent){
 }
 
 void RPG::printStats(){
-    cout << "\nName: " << name << "\nHits Taken: " << hits_taken
-        <<"\nLuck: " << luck << "\nExp: " << exp 
-        <<"\nLevel: " << level << "\nStatus: ";
+    cout << "\nName: " << name << "   Hits Taken: " << hits_taken
+        <<"   Luck: " << luck << "   Exp: " << exp 
+        <<"   Level: " << level << "   Status: ";
     
     if (isAlive()){
         cout << "Alive";
