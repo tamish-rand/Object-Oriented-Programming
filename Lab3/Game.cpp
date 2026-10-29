@@ -73,11 +73,17 @@ void Game::battleRound(){
 }
 
 void Game::gameLoop(){
-
+    while (live_players.size() > 1)
+    {
+        battleRound();
+    }
 }
 
 void Game::printFinalResults(){
-
+    for (RPG* player : players)
+    {
+        player -> printStats();
+    }
 }
 
 Game::~Game(){
