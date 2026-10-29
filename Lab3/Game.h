@@ -9,11 +9,11 @@ using namespace std;
 class Game
 {
     private:
-        vector<RPG*>_players;
+        vector<RPG*> players;
         set<int> live_players;
 
     public:
-        void generatePLayers(int n);
+        void generatePlayers(int n);
         int selectPlayer();
         void endRound(RPG* winner, RPG* loser, int loserIndex);
         void battleRound();
