@@ -74,9 +74,12 @@ void RPG::attack (RPG* opponent){
     float random_num = dis(gen);
 
     bool hit = false;
-    if (random_num > HIT_FACTOR * opponent -> getLuck()){
+    if (random_num > HIT_FACTOR *opponent -> getLuck()){
         hit = true;
-
+        opponent->setHitsTaken(opponent->getHitsTaken() + 1);
+        updateExpLevel();
+    }
+    else{
     }
 
 }
